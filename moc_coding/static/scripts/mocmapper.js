@@ -17,6 +17,8 @@
  
 **/
 
+// To do: Make this MUCH more general and "subclassable" in local
+// implementations.
 $(function () {
   var searchApi = null;
   // MOC-O*NET Map Model. We're calling it CustomCareer to keep it consistent
