@@ -18,7 +18,7 @@
 **/
 
 $(function () {
-  var searchApi = "/seo/v1/jobsearch/";
+  var searchApi = null;
   // MOC-O*NET Map Model. We're calling it CustomCareer to keep it consistent
   // with what we're calling it in moc_coding.models.
   var CustomCareer = Backbone.Model.extend({
@@ -113,10 +113,11 @@ $(function () {
       $.each(MocMaps, function(index, item) {
       });
       this.input = this.$("#job-title");
-      var apiKey = "a090afefab8a39c82ae64a88a7ce36beb50dbedb";
-      var apiUser = "mocmapclient";
-      this.authParams = "?format=json&limit=1000&username="+apiUser+"&api_key="+apiKey;
-      this.buidParam = "&buid=" + this.objid();
+      // These will need to be edited to include information for the API being
+      // used, if applicable.
+      var apiKey = null;
+      var apiUser = null;
+      this.authParams = null;
     },
 
     fetchMocs: function() {
