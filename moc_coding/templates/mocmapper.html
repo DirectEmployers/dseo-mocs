@@ -1,0 +1,88 @@
+{# The "inline-group" and "form-row" <div>s are concessions to ease #}
+{# integration with the Django admin panel. If you're using this template #}
+{# outside of that context, it is safe to remove them if you desire. #}
+<div class="inline-group" id="mapper">
+  <h2>MOC Mapper</h2>
+  <ul class="messagelist" id="mocmap"></ul>
+
+  <div class="form-row mocmapper" id="customcareers">
+    <label for="maps-by-buid">Custom Careers:</label>
+    <span id="maps-by-objid"></span>
+    <button type="button" id="delete-items">Delete Selected</button>
+  </div><!-- #customcareers.form-row mocmapper -->
+  
+  <div class="form-row mocmapper" id="onet-search">
+    <label for="job-title">Find O*NET Codes based on your company's jobs:</label>
+    <input id="job-title" type="text" placeholder="Enter a job title">
+    <button type="button" id="search-titles">Search Jobs</button>
+    <p class="help">Search jobs based on job title; full or partial job title will work.</p>
+    <section id="onets">
+      <form action="." method="get" id="onet">
+        <label for="title-jobs">Jobs matching your search:</label>
+        <select id="title-jobs">
+        </select>
+        {# The style for the "help"-class <p> tags is defined by the Django #}
+        {# admin panel CSS, so like elsewhere, these are safe to remove or #}
+        {# modify if you use this template outside that context. #}
+        <p class="help">Select a job from this dropdown and its O*NET code will be automatically selected</p>
+        <label for="onet-select">O*NET Codes for jobs matching your search:</label>
+        <select id="onet-select">
+        </select>
+        <p class="help">Select an O*NET code from this dropdown to see what job titles match it.</p>
+      </form>
+    </section>
+  </div><!-- #onet-search.form-row mocmapper -->
+
+  <div class="form-row mocmapper" id="moc-fetch">
+    <section id="mocs">
+      <form action="." method="get" id="moc">
+        <label for="moc">Filter MOCs by branch:</label>
+        <span id="branch-checkboxes">
+          <input type="checkbox" id="m" value="marines" checked="checked">
+          <label for="m">Marine Corps</label>
+          <input type="checkbox" id="c" value="coast-guard" checked="checked">
+          <label for="c">Coast Guard</label>
+          <input type="checkbox" id="n" value="navy" checked="checked">
+          <label for="n">Navy</label>
+          <input type="checkbox" id="a" value="army" checked="checked">
+          <label for="a">Army</label>
+          <input type="checkbox" id="f" value="air-force" checked="checked">
+          <label for="f">Air Force</label>
+        </span>
+        <input type="checkbox" id="toggle-all" value="all" checked="checked">
+        <label for="toggle-all">Mark all branches</label>
+        <button type="button" id="moc-button">Fetch MOCs</button>
+        <p><label for="moc-select">MOCs:</label>
+        <select id="moc-select">
+        </select></p>
+      </form>
+    </section>
+  </div><!-- #moc-fetch.form-row mocmapper -->
+
+  <div class="form-row mocmapper" id="results">
+    <div id="map-buttons">
+      <button type="button" id="preview-results">Preview Results For This Mapping</button>
+      <button type="button" id="create-map">Save This Custom Career</button>
+      <button type="button" id="reset">Reset Form</button>
+    </div><!-- #map-buttons -->
+
+    <section id="preview">
+      <span id="preview"></span>
+      <h4><span id="jobcount"></span></h4>
+      <ul id="solr-preview"></ul>
+    </section>
+  </div><!-- #results.form-row mocmapper -->
+</div><!-- .inline-group -->
+
+{# This block tag was put in specifically for integration with the Django #}
+{# admin panel. If you're using this template elsewhere, you can probably #}
+{# remove this. #}
+{% block footer %}
+<div id="footer">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="../../../../files/mocmapper/underscore-1.3.1.min.js"></script>
+  <script type="text/javascript" src="../../../../files/mocmapper/backbone-0.9.2.min.js"></script>
+  <script type="text/javascript" src="../../../../files/mocmapper/bb-localstorage.js"></script>
+  <script type="text/javascript" src="../../../../files/mocmapper/mocmapper.js"></script>
+</div><!-- #footer -->        
+{% endblock footer %}
