@@ -7,6 +7,7 @@ setup(
     author = "DirectEmployers Foundation",
     author_email = "matt@directemployersfoundation.org",
     long_description = open('README.rst', 'r').read(),
+    packages = ['moc_coding'],
     classifiers = [
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
