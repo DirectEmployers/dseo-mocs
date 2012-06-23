@@ -11,7 +11,7 @@ setup(
         'moc_coding': [
             'tests/factories.py'
         ]
-    }
+    },
     packages = ['moc_coding'],
     classifiers = [
         'Intended Audience :: Developers',
