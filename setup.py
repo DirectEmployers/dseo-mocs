@@ -12,7 +12,10 @@ setup(
             'tests/factories.py'
         ]
     },
-    packages = ['moc_coding'],
+    packages = [
+        'moc_coding',
+        'moc_coding.tests'
+    ],
     classifiers = [
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
