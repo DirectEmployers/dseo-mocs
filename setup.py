@@ -20,5 +20,5 @@ setup(
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP :: Indexing/Search'
     ],
-    url = 'http://github.com/DirectEmployers/dseo-mocs
+    url = 'http://github.com/DirectEmployers/dseo-mocs'
 )
