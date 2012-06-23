@@ -7,6 +7,11 @@ setup(
     author = "DirectEmployers Foundation",
     author_email = "matt@directemployersfoundation.org",
     long_description = open('README.rst', 'r').read(),
+    package_data = {
+        'moc_coding': [
+            'tests/factories.py'
+        ]
+    }
     packages = ['moc_coding'],
     classifiers = [
         'Intended Audience :: Developers',
@@ -15,5 +20,5 @@ setup(
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP :: Indexing/Search'
     ],
-    url = 'http://github.com/DirectEmployers/solrsitemap/'
+    url = 'http://github.com/DirectEmployers/dseo-mocs
 )
