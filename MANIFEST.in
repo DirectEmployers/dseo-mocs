@@ -1,5 +1,5 @@
 include setup.py MANIFEST.in
 recursive-include moc_coding/templates *
-recursive-include moc_coding/static *
+recursive-include moc_coding/tests *
 global-exclude *~
 
